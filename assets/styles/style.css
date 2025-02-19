@@ -673,7 +673,7 @@ section.description h2::after{
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  width: 95%;
+  width: 90%;
   background: var(--color_timeline_contact);
   padding: 1.5rem;
   border-radius: 12px;
@@ -722,6 +722,7 @@ section.description h2::after{
   font-size: 16px;
   text-align: center;
   transition: 0.3s;
+  margin: 1.4rem 0;
 }
 
 .button:hover {
@@ -837,8 +838,8 @@ section.description > h2 {
 
 }
 .contact_form {
-  margin-top: 3rem;
-  width: 100%;
+  margin-top: 4rem;
+  width: 70%;
 
 }
 
