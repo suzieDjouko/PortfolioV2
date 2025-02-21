@@ -41,10 +41,10 @@
 }
 
 body{
-  display: grid;
   background-color: var(--color_primary);
   transition: background 0.3s, color 0.3s;
-
+  width: 100%;
+  min-height: 100vh;
 
 }
 
@@ -218,7 +218,7 @@ section.description h2::after{
 }
 .experience_header p:last-child{
   color: var(--color_menu_ecris_color);
-  
+  line-height: 1.6rem;
 
 }
 .experience_header{
@@ -398,7 +398,7 @@ section.description h2::after{
   font-weight: 500;
 }
 .timeline_content{
-  padding: 1rem;
+  padding: 2rem;
   flex: 1;
 }
 
@@ -474,13 +474,12 @@ section.description h2::after{
 }
 
 
-.project_container_header{
-  align-self: flex-start;
-  justify-self: start;
+h2.project_container_header{
+  margin-top: 3rem;
+  margin-left: 5rem;
+  margin-bottom: 2rem;
 }
-.project_container h2{
- margin-bottom: 2rem;
-}
+
 
 .projects_cards{
   display: grid;
@@ -587,18 +586,16 @@ section.description h2::after{
 
 /*CONTACT ME*/
 .contactme_container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: 
-  "contactme"
-  "timelin"
-  "card"
-  "form";
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
   gap: 2rem;
+  padding: 1rem;
+  max-width: 1250px;
+  width: 100%;
   margin: 0 auto;
 }
-.contactme_text_image{
+.contact_timeline{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -608,17 +605,13 @@ section.description h2::after{
 }
 
 .contactme_container_text{
-  display: flex;
-  flex-direction: column;
-  grid-area: contactme;
-  align-self: center;
   line-height: 1.6;
   color: var(--color_black);
+  margin-left: 1rem;
 }
 
 .contactme_container_text h3{
   font-weight: bold;
-  font-size: 18px;
   margin-top: 1.5rem ;
 }
 
@@ -639,37 +632,34 @@ section.description h2::after{
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  padding: 0 1rem;
 }
+
 .timeline_contact_card_circle{
-  width: 50px;
-  height: 50px;
+  display: none;
 }
 
 .timeline_contact{
-  grid-area: timelin;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
   gap: 2rem;
-  
 
 }
 .timeline_card_container{
-  grid-area: card;
   text-align: center;
   font-weight: 700;
   margin: 0 auto;
-  min-width: 95%;
   margin-bottom: 1rem;
   margin-top: 3rem;
-  margin-right: 1rem;
   border-radius: 12px;
+  min-width: 59%;
+  overflow: hidden;
 }
 
 .contact_form {
-  grid-area: form;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -712,22 +702,6 @@ section.description h2::after{
   resize: none; 
 }
 
-.button {
-  background-color: var(--color_timeline_text);
-  color: var(--color_white);
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  transition: 0.3s;
-  margin: 1.4rem 0;
-}
-
-.button:hover {
-  background-color: var(--color_timeline_text2);
-}
 
 input, textarea {
   color: var(--color_about_text); 
@@ -825,8 +799,7 @@ section.description > h2 {
 @media screen and (min-width:1024px){
   
   .timeline_cards{
-    grid-template-columns: repeat(3,1fr);
-    padding: 0 2rem;
+    grid-template-columns: repeat(3, 1fr);
   }
   .tools_cards{
     padding: 0 2rem;
@@ -845,16 +818,63 @@ section.description > h2 {
 
 .experience_container , .project_container{
   max-width: 1000px;
+  font-size: 1.4rem;
 }
+
 div.contactme_container{
   min-width: 100%;
   height: auto;
+}
+.experience_header p.bold{
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+}
+.experience_header p:last-child{
+  line-height: 1.9rem;
+}
+.timeline_content p {
+  font-size: 0.9rem;
+}
+
+.timeline_contact_card_circle{
+  display: flex;
+}
+.contactme_container_text , section.description p{
+  font-size: 1.4rem;
+
+}
+
+section > h2{
+font-size: 1.6rem;
+margin-top: 3rem;
 }
 
 
 }
 
 @media screen and (min-width:1440px){
+  .contactme_container{
+    font-size: 1.8rem;
+  }
+  .form_group input,
+.form_group textarea {
+  padding: 18px;
+  border: 1px solid var(--color_index_button_border_dow);
+  border-radius: 12px;
+  font-size: 18px;
+  background-color: var(--color_white);
+}
+
+
+  .contactme_container_text , section.description p{
+    font-size: 1.9rem;
+  
+  }
+  
+  section > h2{
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  }
   
   .image_container{
     max-width: 120px;
@@ -877,6 +897,35 @@ div.contactme_container{
   width: 80%;
   }
 
+  .timeline-circle{
+   
+    width: 60px;
+    height: 60px;
+   
+  }
+  .timeline_content p{
+    font-size: 1rem;
+  }
+
+  .timeline_header{
+    padding: 1.4rem;
+  }
+  .timeline_title img{
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline_title h3{
+    font-size: 1.6rem;
+    margin-left: 1rem;
+  }
+  .footer_item{
+    font-size: 1.2rem;
+  }
+  span.badge{
+    font-size: 14px;
+  }
+  
 }
 
 footer {
